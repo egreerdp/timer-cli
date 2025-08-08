@@ -12,9 +12,9 @@ experimental = true
 [tasks]
 [tasks.build]
 description = "build executable"
-run = 'go build -o ./bin/$BIN_NAME .'
+run = 'go build -o ./bin/{{env.BIN_NAME}} .'
 
 [tasks.run]
 description = "run the executable"
 depends = ["build"]
-run = "./bin/$BIN_NAME -c $CONFIG_PATH"
+run = "./bin/$BIN_NAME -c {{env.CONFIG_PATH}}"
